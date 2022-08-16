@@ -1,0 +1,211 @@
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    background: url(/img/back.jpg);
+}
+.logo img{
+    width: 27px;
+    height: 35px;
+}
+.logo{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.logo h3 a{
+    font-family: 'Roboto Slab', serif;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+.logo h3 a span{
+    color: #147c00;
+    font-size: 18px;
+}
+.heading h1{
+    font-size: 22px;
+    font-weight: 500;
+    margin: 99px 0px 20px;
+    line-height: 1.1;
+    font-family: 'Roboto Slab', serif;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.image-galery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.image-galery img{
+    width: 200px;
+}
+.image-box{
+    position: relative;
+    width: 300px;
+    height: 200px;
+    margin: 10px;
+    overflow: hidden;
+}
+.image-box img{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transform: scale(1);
+    transition: all .1s ease-out;
+}
+.image-box:hover img{
+    transform: scale(1.1);
+    transition: all 0.3s ease-in;
+}
+
+.object{
+    object-fit: cover;
+}
+
+
+
+.layer{
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .40s;
+}
+.layer:hover{
+    background: rgba(0, 0, 0, 0.322);
+}
+.layer h3{
+    position: absolute;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+    bottom: 0px;
+    left: 50%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all .40s;
+    font-family: 'Lato', sans-serif;
+}
+.layer:hover h3{
+    bottom: 35%;
+    opacity: 1;
+}
+
+.overlay{
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0);
+    z-index: 9999;
+    transition: .8s;
+    text-align: center;
+    padding: 100px 0;
+}
+.overlay:target{
+    width: auto;
+    height: auto;
+    bottom: 0;
+    right: 0;
+    background: rgba(0,0,0,.7);
+}
+
+.overlay img{
+    max-height: 100%;
+    box-shadow: 2px 2px 7px rgba(0,0,0,.5);
+
+}
+.overlay:target img{
+    animation: zoomDanFade 1s;
+}
+.overlay .close{
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin-left: -20px;
+    color: white;
+    background-color: #000000;
+    border: 1px solid white;
+    padding: 3px;
+    opacity: 0;
+    text-decoration: none;
+}
+.overlay:target .close{
+    animation: slideDownFade .5s .5s forwards;
+}
+
+@keyframes zoomDanFade{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDownFade{
+    0%{
+        opacity: 0;
+        margin-top: -20px;
+    }
+    100%{
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+
+
+#back-to-top-btn{
+    display: none;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background: #147c00;
+    bottom: 40px;
+    left: 25px;
+    cursor: pointer;
+
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    color: aliceblue;
+    outline: none;
+    font-size: 22px;
+    border-radius: 10px;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-property: background-color, color;
+}
+#back-to-top-btn:hover{
+    background: yellowgreen;
+}
+#back-to-top-btn:hover i{
+    color: black;
+}
+#back-to-top-btn i{
+    display: flex;
+	align-items: center;
+	justify-content: center;
+    text-align: center;
+	height: 100%;
+	font-size: 25px;
+	color: white;
+}
+
